@@ -1,22 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Image } from "react-bootstrap";
 
 import './movie-view.scss';
+
+import { Link } from "react-router-dom";
 
 export class MovieView extends React.Component {
 
   render() {
-    const { movie, onBackClick } = this.props;
+    const { movie, onBackClick, handleFavorite } = this.props;
 
     return (
       <Row>
-        <Col>
+        <Col lg={8}>
           <div className="movie-view">
-            <div className="movie-poster">
+            <div className="movie-poster mt-3">
               <img src={movie.ImagePath} />
             </div>
-            <div className="movie-title">
+            <div className="movie-title mt-2">
               <span className="label">Title: </span>
               <span className="value">{movie.Title}</span>
             </div>
@@ -32,9 +34,29 @@ export class MovieView extends React.Component {
               <span className="label">Genre: </span>
               <span className="value">{movie.Genre.Name}</span>
             </div>
-            <Button className="back-button mt-2"
+            <Link to={`/directors/${movie.Director.Name}`}>
+              <Button variant="link">Director</Button>
+            </Link>
+            <Link to={`/genres/${movie.Genre.Name}`}>
+              <Button variant="link">Genre</Button>
+            </Link>
+
+            <Button
+              className="favorite-button mt-2"
+              variant="primary"
+              onClick={() => handleFavorite(movie._id, "add")}
+            >
+              Add to favorite Movies
+            </Button>
+            <Button
+              className="back-button mt-2"
               variant="secondary"
-              onClick={() => { onBackClick(null); }}>Back</Button>
+              onClick={() => {
+                onBackClick();
+              }}
+            >
+              Back
+            </Button>
           </div>
         </Col>
       </Row>
