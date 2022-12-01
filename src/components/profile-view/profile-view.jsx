@@ -35,7 +35,7 @@ export default class ProfileView extends React.Component {
     console.log(movie)
     axios
       .delete(
-        `https://my-flix-app-2022.herokuapp.com/users/${username}/movies/${movie}`,
+        `https://my-flix-app-2022.herokuapp.com/users/${username}/favoritemovies/${movie}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
@@ -292,7 +292,7 @@ export default class ProfileView extends React.Component {
                     variant="secondary"
                     onClick={() => { this.onRemoveFavorite(movie._id) }}
                   >
-                    Remove from the list
+                    Remove
                   </Button>
                 </Col>
               ))}

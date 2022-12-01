@@ -91,12 +91,8 @@ export function LoginView(props) {
                   </Form.Group>
 
                   <Button className="login-button mt-2 mr-2" variant="primary" type="submit" onClick={handleSubmit}>
-                    Sign in
+                    Login
                   </Button>
-                  <Button className="register-button mt-2" variant="secondary" type="submit" onClick={handleRegisterClick}>
-                    Register
-                  </Button>
-
                 </Form>
               </Card.Body>
             </Card>
@@ -109,5 +105,5 @@ export function LoginView(props) {
 
 LoginView.propTypes = {
   onLoggedIn: PropTypes.func.isRequired,
-  toRegister: PropTypes.func.isRequired
+  // toRegister: PropTypes.func.isRequired
 };

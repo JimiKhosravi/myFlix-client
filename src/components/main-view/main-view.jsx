@@ -110,8 +110,8 @@ export class MainView extends React.Component {
       // Add MovieID to Favorites (local state & webserver)
       if (action === "add") {
         this.setState({ favoriteMovies: [...favoriteMovies, movieId] });
-        axios.put(
-          `https://my-flix-app-2022.herokuapp.com/users/${username}/movies/${movieId}`,
+        axios.post(
+          `https://my-flix-app-2022.herokuapp.com/users/${username}/favoritemovies/${movieId}`,
           {},
           {
             headers: { Authorization: `Bearer ${accessToken}` },

@@ -25367,7 +25367,7 @@ class MainView extends _reactDefault.default.Component {
                         movieId
                     ]
                 });
-                _axiosDefault.default.put(`https://my-flix-app-2022.herokuapp.com/users/${username}/movies/${movieId}`, {
+                _axiosDefault.default.post(`https://my-flix-app-2022.herokuapp.com/users/${username}/favoritemovies/${movieId}`, {
                 }, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
@@ -45500,19 +45500,7 @@ function LoginView(props) {
                                                 lineNumber: 93
                                             },
                                             __self: this,
-                                            children: "Sign in"
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                            className: "register-button mt-2",
-                                            variant: "secondary",
-                                            type: "submit",
-                                            onClick: handleRegisterClick,
-                                            __source: {
-                                                fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 96
-                                            },
-                                            __self: this,
-                                            children: "Register"
+                                            children: "Login"
                                         })
                                     ]
                                 })
@@ -45527,8 +45515,7 @@ function LoginView(props) {
 _s(LoginView, "OE8YjcJGIuyxg6F5muZvwXJgQUc=");
 _c = LoginView;
 LoginView.propTypes = {
-    onLoggedIn: _propTypesDefault.default.func.isRequired,
-    toRegister: _propTypesDefault.default.func.isRequired
+    onLoggedIn: _propTypesDefault.default.func.isRequired
 };
 var _c;
 $RefreshReg$(_c, "LoginView");
@@ -45559,8 +45546,6 @@ var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 var _reactRouterDom = require("react-router-dom");
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie  } = this.props;
@@ -45619,40 +45604,6 @@ class MovieCard extends _reactDefault.default.Component {
                                 __self: this,
                                 children: "Open"
                             })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/directors/${movie.Director.Name}`,
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 22
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                variant: "link",
-                                __source: {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 23
-                                },
-                                __self: this,
-                                children: "Director"
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/genres/${movie.Genre.Name}`,
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 26
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                variant: "link",
-                                __source: {
-                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 27
-                                },
-                                __self: this,
-                                children: "Genre"
-                            })
                         })
                     ]
                 })
@@ -45665,8 +45616,7 @@ MovieCard.propTypes = {
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         ImagePath: _propTypesDefault.default.string.isRequired
-    }).isRequired,
-    onMovieClick: _propTypesDefault.default.func.isRequired
+    }).isRequired
 };
 
   $parcel$ReactRefreshHelpers$4249.postlude(module);
@@ -45674,7 +45624,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"iBFrr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eDgvY"}],"ikZdr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"iBFrr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"eDgvY"}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45845,40 +45795,6 @@ class MovieView extends _reactDefault.default.Component {
                                 })
                             ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/directors/${movie.Director.Name}`,
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 37
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                variant: "link",
-                                __source: {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 38
-                                },
-                                __self: this,
-                                children: "Director"
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                            to: `/genres/${movie.Genre.Name}`,
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 40
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                variant: "link",
-                                __source: {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 41
-                                },
-                                __self: this,
-                                children: "Genre"
-                            })
-                        }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                             className: "favorite-button mt-2",
                             variant: "primary",
@@ -45886,7 +45802,7 @@ class MovieView extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 44
+                                lineNumber: 37
                             },
                             __self: this,
                             children: "Add to favorite Movies"
@@ -45899,7 +45815,7 @@ class MovieView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 51
+                                lineNumber: 44
                             },
                             __self: this,
                             children: "Back"
@@ -46036,7 +45952,7 @@ function Navbar({ user  }) {
                                     lineNumber: 42
                                 },
                                 __self: this,
-                                children: "Sign-in"
+                                children: "Login"
                             }),
                             !isAuth() && /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                                 href: "/register",
@@ -46045,7 +45961,7 @@ function Navbar({ user  }) {
                                     lineNumber: 43
                                 },
                                 __self: this,
-                                children: "Sign-up"
+                                children: "Register"
                             })
                         ]
                     })
@@ -46113,7 +46029,7 @@ class ProfileView extends _reactDefault.default.Component {
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
         console.log(movie);
-        _axiosDefault.default.delete(`https://my-flix-app-2022.herokuapp.com/users/${username}/movies/${movie}`, {
+        _axiosDefault.default.delete(`https://my-flix-app-2022.herokuapp.com/users/${username}/favoritemovies/${movie}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -46620,7 +46536,7 @@ class ProfileView extends _reactDefault.default.Component {
                                                     lineNumber: 290
                                                 },
                                                 __self: this,
-                                                children: "Remove from the list"
+                                                children: "Remove"
                                             })
                                         ]
                                     }, movie._id)
