@@ -47,5 +47,3 @@ export function Navbar({ user }) {
     </Navbar>
   );
 }
-
-export default Navbar
