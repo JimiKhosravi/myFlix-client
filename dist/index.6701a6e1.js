@@ -46003,6 +46003,7 @@ function Navbar({ user  }) {
     }));
 }
 _c = _reactBootstrap.Navbar;
+exports.default = _reactBootstrap.Navbar;
 var _c;
 $RefreshReg$(_c, "Navbar");
 
