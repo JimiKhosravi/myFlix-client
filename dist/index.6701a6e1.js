@@ -45891,8 +45891,6 @@ $parcel$ReactRefreshHelpers$1bb2.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navbar", ()=>Navbar
-);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -46002,6 +46000,7 @@ function Navbar({ user  }) {
         })
     }));
 }
+exports.default = Navbar;
 _c = _reactBootstrap.Navbar;
 var _c;
 $RefreshReg$(_c, "Navbar");
