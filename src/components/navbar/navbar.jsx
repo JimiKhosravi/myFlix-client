@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 
-export default function Navbar({ user }) {
+export function Navbar({ user }) {
   const onLoggedOut = () => {
     localStorage.clear();
     window.open("/", "_self");
@@ -47,3 +47,5 @@ export default function Navbar({ user }) {
     </Navbar>
   );
 }
+
+export default Navbar
