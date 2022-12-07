@@ -8,7 +8,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { Navbar } from "../navbar/navbar";
+import { Navbar_ } from "../navbar_/navbar_";
 import ProfileView from "../profile-view/profile-view";
 
 import Row from "react-bootstrap/Row";
@@ -151,7 +151,7 @@ export class MainView extends React.Component {
 
     return (
       <Router>
-        <Navbar user={user} />
+        <Navbar_ user={user} />
         <Row className="main-view justify-content-md-center mt-3">
           <Route
             exact
